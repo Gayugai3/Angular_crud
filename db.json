@@ -1,0 +1,93 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "employee": [
+    {
+      "firstName": "Gayathri",
+      "lastName": "Jagadeesh",
+      "email": "jdarcuss@gmail.com",
+      "dob": "2023-11-30T18:30:00.000Z",
+      "gender": "female",
+      "education": "Post Graduate",
+      "company": "Google",
+      "experience": "4",
+      "package": "12",
+      "id": 1
+    },
+    {
+      "firstName": "Prabhakaran",
+      "lastName": "Jagadeesh",
+      "email": "jdarcuss@gmail.com",
+      "dob": "2023-12-05T18:30:00.000Z",
+      "gender": "male",
+      "education": "Post Graduate",
+      "company": "TEXAS",
+      "experience": "7",
+      "package": "34",
+      "id": 3
+    },
+    {
+      "firstName": "Arul",
+      "lastName": "Mozhi",
+      "email": "test@gmail.com",
+      "dob": "2023-11-14T18:30:00.000Z",
+      "gender": "male",
+      "education": "Intermediate",
+      "company": "asdf",
+      "experience": "5",
+      "package": "523",
+      "id": 5
+    },
+    {
+      "firstName": "Jagadeesh",
+      "lastName": "Selvam",
+      "email": "jdarcuss@gmail.com",
+      "dob": "2022-12-14T18:30:00.000Z",
+      "gender": "male",
+      "education": "Graduate",
+      "company": "asdfa",
+      "experience": "12",
+      "package": "56",
+      "id": 6
+    },
+    {
+      "firstName": "Ram",
+      "lastName": "rasadf",
+      "email": "ram@gmail.com",
+      "dob": "2023-12-07T18:30:00.000Z",
+      "gender": "male",
+      "education": "Intermediate",
+      "company": "asdfasf",
+      "experience": "53332",
+      "package": "544",
+      "id": 7
+    },
+    {
+      "firstName": "Prabhakaran",
+      "lastName": "Jagadeesh",
+      "email": "jdarcuss@gmail.com",
+      "dob": "2023-12-05T18:30:00.000Z",
+      "gender": "male",
+      "education": "Post Graduate",
+      "company": "TEXAS",
+      "experience": "7",
+      "package": "34",
+      "id": 8
+    }
+  ]
+}
