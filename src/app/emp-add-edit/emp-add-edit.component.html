@@ -80,6 +80,7 @@
           placeholder="Ex. 4"
           type="number"
           formControlName="experience"
+          (change)="calculatePackage()"
         />
       </mat-form-field>
       <mat-form-field appearance="outline">
@@ -90,6 +91,7 @@
           placeholder="Ex. 12"
           type="number"
           formControlName="package"
+          [readonly]="true"
         />
         <mat-hint>In rupees</mat-hint>
       </mat-form-field>

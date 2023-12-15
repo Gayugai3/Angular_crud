@@ -2,27 +2,43 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { EmpAddEditComponent } from './emp-add-edit/emp-add-edit.component';
 import { EmployeeService } from './services/employee.service';
-import {MatPaginator} from '@angular/material/paginator';
-import {MatSort} from '@angular/material/sort';
-import {MatTableDataSource} from '@angular/material/table';
-
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
   title = 'crud-app';
-  displayedColumns: string[] = ['id', 'firstName', 'lastName', 'email', 'dob', 'gender', 'education', 'company', 'experience', 'package', 'action'];
+
+  displayedColumns: string[] = [
+    'id',
+    'firstName',
+    'lastName',
+    'email',
+    'dob',
+    'gender',
+    'education',
+    'company',
+    'experience',
+    'package',
+    'action',
+  ];
+
   dataSource!: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
-  constructor(private _dialog: MatDialog, private _empService: EmployeeService) { }
-  
+  constructor(
+    private _dialog: MatDialog,
+    private _empService: EmployeeService
+  ) {}
+
   ngOnInit(): void {
-    this.getEmployeeList()
+    this.getEmployeeList();
   }
 
   openAddEditEmpForm() {
@@ -32,8 +48,8 @@ export class AppComponent implements OnInit {
         if (val) {
           this.getEmployeeList();
         }
-      }
-    })
+      },
+    });
   }
 
   getEmployeeList() {
@@ -45,7 +61,7 @@ export class AppComponent implements OnInit {
         this.dataSource.paginator = this.paginator;
       },
       error: console.log,
-    })
+    });
   }
 
   applyFilter(event: Event) {
@@ -58,13 +74,15 @@ export class AppComponent implements OnInit {
   }
 
   deleteEmployee(id: number) {
-    this._empService.deleteEmployee(id).subscribe({
-      next: (res) => {
-        alert("Employee Delete Success")
-        this.getEmployeeList();
-      },
-      error: console.log,
-    })
+    if (confirm('Are you sure you want to delete this employee?')) {
+      this._empService.deleteEmployee(id).subscribe({
+        next: (res) => {
+          alert('Employee Delete Success');
+          this.getEmployeeList();
+        },
+        error: console.log,
+      });
+    }
   }
 
   openEditEmpForm(data: any) {
@@ -76,8 +94,7 @@ export class AppComponent implements OnInit {
         if (val) {
           this.getEmployeeList();
         }
-      }
-      
+      },
     });
   }
 }
